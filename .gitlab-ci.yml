@@ -1,0 +1,36 @@
+stages:
+  - checkout_dev
+  - checkout_prd
+  
+.checkout_template_dev: &checkout_template_dev
+  script:
+  - (robocopy . D:\ScriptRepositories\ZIS-RT-WIN\%CI_PROJECT_NAME% /XD .git /XF .gitlab-ci.yml /e /purge) ^& IF %ERRORLEVEL% LEQ 4 cmd exit /B 0
+  - echo %CI_PROJECT_DIR%        
+  stage: checkout_dev
+  except:
+  - tags
+  only:
+  - dev
+
+checkout_dev:
+  <<: *checkout_template_dev
+  tags:
+  - dev
+  - dces4498
+
+.checkout_template_prd: &checkout_template_prd
+  script:
+  - (robocopy %CI_PROJECT_DIR% D:\ScriptRepositories\ZIS-RT-WIN\%CI_PROJECT_NAME% /XD .git /XF .gitlab-ci.yml /e /purge) ^& IF %ERRORLEVEL% LEQ 4 cmd exit /B 0
+  - echo %CI_PROJECT_DIR%        
+  stage: checkout_prd
+  except:
+  - tags
+  only:
+  - master
+
+checkout_prd:
+  <<: *checkout_template_prd
+  tags:
+  - prd
+  - dces4424
+

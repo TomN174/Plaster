@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<plasterManifest schemaVersion="1.1" templateType="Project" 
+  xmlns="http://www.microsoft.com/schemas/PowerShell/Plaster/v1">
+  <metadata>
+    <name>FullModuleTemplate</name>
+    <id>fb8e2aff-873b-4590-81e6-51f3d5206634</id>
+    <version>0.0.1</version>
+    <title>Full Module Template</title>
+    <description></description>
+    <author>Thomas Naumann</author>
+    <tags></tags>
+  </metadata>
+  <parameters>
+    <parameter name="Project" type="text" prompt="Name of your Project" />
+    <parameter name="Author" type="text" prompt="Authors Name" />
+    <parameter name="ModuleDesc" type="text" prompt="Brief description on this module" />
+    <parameter name="Version" type="text" prompt="Initial module version" default="1.0.0" />
+    <parameter name="GitHubUserName" type="text" prompt="GitHub username" default="${PLASTER_PARAM_Author}"/>
+    <parameter name="GitHubRepo" type="text" prompt="Github repo name for this module" default="${PLASTER_PARAM_Project}"/>
+    <parameter name="DepartmentRepositoryPath" type="text" prompt="Department ZIS-RT or ZIS-AP"/>
+  </parameters>
+  <content>
+    <message>
+Creating folder structure
+    </message>
+    <file source='' destination='${PLASTER_PARAM_Project}Module'/>
+    <file source='' destination='${PLASTER_PARAM_Project}Module\functions'/>
+    <!--
+    <file source='' destination='${PLASTER_PARAM_Project}Module\internal'/><file source='' destination='Docs'/><file source='' destination='Logs'/><file source='' destination='Output'/>
+    -->
+    <message>
+Deploying common files
+    </message>
+    <templateFile source='lic.txt' destination='LICENSE.TXT'/>
+    <templateFile source='readme.md' destination=''/>
+    <templateFile source='.gitlab-ci.yml' destination='.gitlab-ci.yml'/>
+    <file source='null.txt' destination='_LIB_\null.txt'/>
+    <file source='null.txt' destination='_QUERY_\null.txt'/>
+    <file source='null.txt' destination='Docs\null.txt'/>
+    <file source='null.txt' destination='Logs\null.txt'/>
+    <file source='null.txt' destination='Output\null.txt'/>
+    <file source='null.txt' destination='${PLASTER_PARAM_Project}Module\internal\null.txt'/>
+    <file source='module.psm1' destination='${PLASTER_PARAM_Project}Module\${PLASTER_PARAM_Project}Module.psm1'/>
+    <templateFile source='000-LoadModule.ps1' destination=''/>
+    <templateFile source='New-ScriptPrjname.ps1' destination='${PLASTER_PARAM_Project}Module\functions\New-Script${PLASTER_PARAM_Project}.ps1'/>
+    <!--     
+    <templateFile source='New-Script.ps1' destination='${PLASTER_PARAM_Project}Module\functions\New-Script.ps1'/>
+    <templateFile source='tests\Help.Tests.ps1' destination=''/><templateFile source='tests\Feature.Tests.ps1' destination=''/><templateFile source='tests\Regression.Tests.ps1' destination=''/><templateFile source='tests\Unit.Tests.ps1' destination=''/><templateFile source='tests\Help.Exceptions.ps1' destination=''/><templateFile source='docs\ReleaseNotes.txt' destination=''/>
+ -->
+    <message>
+Creating Module Manifest
+    </message>
+    <newModuleManifest destination='${PLASTER_PARAM_Project}Module\${PLASTER_PARAM_Project}Module.psd1' moduleVersion='$PLASTER_PARAM_Version' rootModule='${PLASTER_PARAM_Project}Module.psm1' author='$PLASTER_PARAM_Author' description='$PLASTER_PARAM_ModuleDesc' companyName = 'Brose Fahrzeugteile' encoding='UTF8-NoBOM'/>
+  </content>
+</plasterManifest>

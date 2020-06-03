@@ -1,0 +1,3 @@
+include:
+  - project: 'SRX/SRX-ZIS-RT-WIN/Template'
+    file: 'ScriptRunnerStandardCICDCfg.yml'
