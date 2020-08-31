@@ -1,4 +1,4 @@
-function New-ScriptPlaster {
+function New-ScriptMyPlaster {
     <#
 			.SYNOPSIS
 			Short Description
@@ -26,7 +26,7 @@ function New-ScriptPlaster {
 		
         [Parameter(Mandatory = $false, Position = 2)]
         [System.String]
-        $CompanyName = 'Brose Fahrzeugteile Se & Co. KG, Bamberg',
+        $CompanyName = 'Toms PS Wonderland',
 		
         [Parameter(Mandatory = $false, Position = 3)]
         [System.String]
@@ -34,7 +34,7 @@ function New-ScriptPlaster {
 		
         [Parameter(Mandatory = $false, Position = 4)]
         [System.String]
-        $Description = 'Script for Project Plaster',
+        $Description = 'Script for Project MyPlaster',
 		
         [Parameter(Mandatory = $false, Position = 5)]
         [System.String]

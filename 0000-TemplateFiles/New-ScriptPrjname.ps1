@@ -127,7 +127,7 @@ $ProjectPath = $PathArrayList -join '\'
 #region load project module
 if ($ProjectPath) {
     $Modules = Get-ChildItem $ProjectPath\Modules -Directory
-    Import-Module $Modules.FullName -Force -Verbose 
+    Import-Module $Modules.FullName -Force #-Verbose 
 }
 #endregion load project module
 #Script starts here

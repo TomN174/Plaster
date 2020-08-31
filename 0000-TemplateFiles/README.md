@@ -5,6 +5,6 @@
 Authored by <%= $PLASTER_PARAM_Author %>
 
 
-<%= $PLASTER_Date %>
+<%= $PLASTER_PARAM_Date %>
 
 
