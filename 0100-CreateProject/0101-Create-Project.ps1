@@ -130,6 +130,7 @@ $plaster = [ordered]@{
     GitHubRepo               = $Project
     DepartmentRepositoryPath = $DepartmentRepositoryPath
     CompanyName              = $User.Company
+    Date                     = Get-Date -UFormat %Y-%m-%d
 }
 
 
@@ -155,7 +156,8 @@ Invoke-Plaster @plaster #-Verbose
 # # 'git@scm.brose.net:ZIS-RT-WIN/W2016-DC-Migration.git'
 
 
-
+# git remote add origin https://github.com/TomN174/Plaster.git
+# git push -u origin master
 
 #Script ends here
 $Log.StopTime = Get-Date

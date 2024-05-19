@@ -19,6 +19,7 @@
     <parameter name="GitHubRepo" type="text" prompt="Github repo name for this module" default="${PLASTER_PARAM_Project}"/>
     <parameter name="DepartmentRepositoryPath" type="text" prompt="Department ZIS-RT or ZIS-AP"/>
     <parameter name='CompanyName' type='text' prompt='Name of your Company' default='michlaa.de' />
+    <parameter name='Date' type='text' prompt='Date in Format YYYY-mm-dd' default='1967-04-17' />
   </parameters>
   <content>
     <message>
@@ -53,7 +54,6 @@ Creating Module Manifest
     </message>
     <!-- <newModuleManifest destination='${PLASTER_PARAM_Project}Module\${PLASTER_PARAM_Project}Module.psd1' moduleVersion='$PLASTER_PARAM_Version' rootModule='${PLASTER_PARAM_Project}Module.psm1' author='$PLASTER_PARAM_Author' description='$PLASTER_PARAM_ModuleDesc' companyName = 'Brose Fahrzeugteile' encoding='UTF8-NoBOM'/> -->
     <!-- <newModuleManifest destination='Modules\${PLASTER_PARAM_Project}\${PLASTER_PARAM_Project}.psd1' moduleVersion='$PLASTER_PARAM_Version' rootModule='${PLASTER_PARAM_Project}Module.psm1' author='$PLASTER_PARAM_Author' description='$PLASTER_PARAM_ModuleDesc' companyName = 'Brose Fahrzeugteile' encoding='UTF8-NoBOM'/> -->
-    <newModuleManifest destination='Modules\${PLASTER_PARAM_Project}\${PLASTER_PARAM_Project}.psd1' moduleVersion='$PLASTER_PARAM_Version' rootModule='${PLASTER_PARAM_Project}.psm1' author='$PLASTER_PARAM_Author' description='$PLASTER_PARAM_ModuleDesc' 
-    companyName = '$PLASTER_PARAM_CompanyName' encoding='UTF8-NoBOM'/>
+    <newModuleManifest destination='Modules\${PLASTER_PARAM_Project}\${PLASTER_PARAM_Project}.psd1' moduleVersion='$PLASTER_PARAM_Version' rootModule='${PLASTER_PARAM_Project}.psm1' author='$PLASTER_PARAM_Author' description='$PLASTER_PARAM_ModuleDesc' companyName = '$PLASTER_PARAM_CompanyName' encoding='UTF8-NoBOM'/>
   </content>
 </plasterManifest>
